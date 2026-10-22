@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Accede a Mi Plata, tu sistema bancario académico."
+    />
+    <title>Mi Plata | Acceso</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/auth-pages.css" />
+    <script src="js/auth.js" defer></script>
+  </head>
+  <body>
+    <main class="auth-page">
+      <section class="auth-visual">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">M</span
+          ><span>mi <span class="brand-light">plata</span></span></a
+        >
+        <div class="visual-copy">
+          <span class="eyebrow">TU BANCO, A TU RITMO</span>
+          <h1>Tu dinero.<br />Tu futuro.<br /><em>Tu tranquilidad.</em></h1>
+          <p>
+            Bienvenido a Mi Plata. Ingresa a tu espacio personal para consultar
+            tus cuentas, administrar tus productos y realizar operaciones
+            bancarias en esta demostración académica.
+          </p>
+          <img
+            class="visual-card"
+            src="assets/images/card-premium.svg"
+            alt="Tarjeta ilustrativa de Mi Plata"
+          />
+        </div>
+        <div class="visual-footer">
+          Sistema Bancario Mi Plata · Proyecto académico CESDE
+        </div>
+      </section>
+      <section class="auth-panel">
+        <div class="auth-box">
+          <span class="eyebrow">ÁREA DE CLIENTES</span>
+          <h2 id="auth-title">Bienvenido de nuevo</h2>
+          <p id="auth-subtitle">
+            Inicia sesión para acceder a tus cuentas y productos bancarios.
+          </p>
+          <div class="auth-tabs">
+            <button type="button" class="active" data-mode="login">
+              Iniciar sesión</button
+            ><button type="button" data-mode="register">Registrarse</button>
+          </div>
+          <div id="auth-message" class="message" hidden role="status"></div>
+          <form id="login-form" class="auth-form">
+            <label for="login-username">Nombre de usuario</label
+            ><input
+              id="login-username"
+              autocomplete="username"
+              required
+              placeholder="Ingresa tu usuario"
+            /><label for="login-password">Contraseña</label
+            ><input
+              id="login-password"
+              type="password"
+              autocomplete="current-password"
+              required
+              placeholder="Ingresa tu contraseña"
+            />
+            <p class="auth-note" id="login-attempts">
+              Intentos fallidos: 0 de 3
+            </p>
+            <button class="btn btn-primary btn-full" type="submit">
+              Iniciar sesión <span>→</span>
+            </button>
+          </form>
+          <form id="register-form" class="auth-form" hidden>
+            <label for="reg-id">Número de identificación</label
+            ><input
+              id="reg-id"
+              required
+              placeholder="Cédula o pasaporte"
+            /><label for="reg-name">Nombre completo</label
+            ><input
+              id="reg-name"
+              autocomplete="name"
+              required
+              placeholder="Nombre y apellidos"
+            /><label for="reg-phone">Número de celular</label
+            ><input
+              id="reg-phone"
+              autocomplete="tel"
+              required
+              placeholder="300 000 0000"
+            /><label for="reg-username">Nombre de usuario único</label
+            ><input
+              id="reg-username"
+              autocomplete="username"
+              required
+              placeholder="Crea tu usuario"
+            /><label for="reg-password">Contraseña (mínimo 6 caracteres)</label
+            ><input
+              id="reg-password"
+              type="password"
+              minlength="6"
+              autocomplete="new-password"
+              required
+              placeholder="Crea una contraseña"
+            /><label for="reg-confirm">Confirmar contraseña</label
+            ><input
+              id="reg-confirm"
+              type="password"
+              minlength="6"
+              autocomplete="new-password"
+              required
+              placeholder="Repite tu contraseña"
+            /><button class="btn btn-primary btn-full" type="submit">
+              Crear cuenta <span>→</span>
+            </button>
+          </form>
+          <p class="auth-note">
+            Proyecto académico. Los datos se guardan en este navegador; no
+            utilices contraseñas reales ni información sensible.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      © 2026 Mi Plata · Sistema bancario demostrativo para fines educativos.
+    </footer>
+  </body>
+</html>
