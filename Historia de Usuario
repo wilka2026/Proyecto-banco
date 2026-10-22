@@ -1,0 +1,249 @@
+Épica 1. Registro e inicio de sesión
+HU-01
+Registro de clientes
+
+Como visitante, quiero registrarme en el sistema ingresando mis datos personales, para crear una cuenta de usuario y acceder a los servicios bancarios.
+
+Criterios de aceptación
+- El formulario solicita identificación, nombre completo, celular, nombre de usuario, contraseña y confirmación de contraseña.
+- El nombre de usuario debe ser único.
+- Las contraseñas deben coincidir.
+- Si los datos son válidos, el sistema registra al cliente y confirma el resultado.
+- Si faltan datos o existe un usuario duplicado, se muestra un mensaje de error.
+
+HU-02
+Inicio de sesión
+
+Como cliente registrado, quiero iniciar sesión con mi usuario y contraseña, para acceder de forma personalizada a mis productos bancarios.
+
+Criterios de aceptación
+- El sistema valida las credenciales.
+- Se muestra el número de intentos fallidos.
+- Después de tres intentos fallidos, la cuenta queda bloqueada.
+- Si las credenciales son correctas y la cuenta no está bloqueada, se abre el panel principal.
+- Los productos bancarios no están disponibles antes de autenticarse.
+
+HU-03
+Administración de usuarios
+
+Como administrador, quiero agregar, consultar, editar y eliminar usuarios, para mantener actualizada la información de los clientes del sistema.
+
+Criterios de aceptación
+- Se pueden registrar nuevos usuarios.
+- Se pueden modificar sus datos.
+- Se puede consultar la lista de usuarios.
+- Antes de eliminar un usuario, se solicita confirmación.
+- Se informa si la operación fue exitosa o ocurrió un error.
+
+Épica 2. Cuentas bancarias y transacciones
+HU-04
+Consultar saldo
+
+Como cliente, quiero consultar el saldo de mis cuentas bancarias, para conocer cuánto dinero tengo disponible.
+
+Criterios de aceptación
+- Se muestran las cuentas asociadas al cliente.
+- Se puede seleccionar una cuenta.
+- El saldo mostrado corresponde al saldo actual después de las operaciones realizadas.
+
+HU-05
+Consignar dinero
+
+Como cliente, quiero consignar dinero en una cuenta, para aumentar mi saldo disponible.
+
+Criterios de aceptación
+- El cliente selecciona la cuenta e ingresa el monto.
+- El monto debe ser mayor que cero.
+- El sistema actualiza el saldo.
+- La consignación queda registrada en los movimientos.
+- Se muestra una confirmación de la operación.
+
+HU-06
+Retirar dinero de una cuenta de ahorros
+
+Como cliente, quiero retirar dinero de mi cuenta de ahorros, para disponer de mis fondos cuando los necesite.
+
+Criterios de aceptación
+- El monto del retiro debe ser mayor que cero.
+- El retiro no puede superar el saldo disponible.
+- Se aplica el interés mensual del 1,5 % conforme a la regla definida en el proyecto.
+- El saldo se actualiza y el movimiento queda registrado.
+
+HU-07
+Retirar dinero de una cuenta corriente
+
+Como cliente con cuenta corriente, quiero retirar dinero utilizando el sobregiro permitido, para disponer de mayor flexibilidad al realizar pagos.
+
+Criterios de aceptación
+- El sistema permite retirar hasta el 120 % del saldo actual, según la regla del documento.
+- Se rechazan los retiros que superen el límite permitido.
+- La cuenta corriente no genera intereses por el saldo.
+- El nuevo saldo y la transacción quedan registrados.
+
+HU-08
+Consultar movimientos
+
+Como cliente, quiero consultar el historial de mis transacciones, para verificar mis operaciones bancarias.
+
+Criterios de aceptación
+- Cada movimiento muestra fecha, hora, tipo de operación y valor.
+- Se incluyen consignaciones, retiros y transferencias.
+- Los movimientos aparecen ordenados desde el más reciente.
+- El historial se actualiza al realizar una nueva operación.
+
+HU-09
+Transferir dinero
+
+Como cliente, quiero transferir dinero entre mis cuentas o a cuentas de otros usuarios, para mover fondos de forma sencilla.
+
+Criterios de aceptación
+- Se seleccionan la cuenta de origen y la cuenta de destino.
+- Se valida que el monto sea positivo y que haya fondos suficientes, teniendo en cuenta las reglas de la cuenta de origen.
+- No se permite transferir al mismo producto de origen.
+- Se actualizan los saldos correspondientes.
+- La operación queda registrada en los movimientos de las cuentas involucradas.
+
+Épica 3. Tarjetas bancarias y compras
+Estas historias incluyen la funcionalidad adicional que solicitaste para que los usuarios puedan adquirir tarjetas desde una página independiente, después de iniciar sesión.
+HU-10
+Consultar catálogo de tarjetas
+
+Como cliente autenticado, quiero visualizar las tarjetas disponibles, sus características y su tipo, para elegir la que mejor se adapte a mis necesidades.
+
+Criterios de aceptación
+- Se muestran las tarjetas disponibles con imagen, nombre y descripción.
+- Se diferencia entre tarjeta débito y tarjeta de crédito.
+- Cada tarjeta tiene una opción para adquirirla o solicitarla.
+- El catálogo se encuentra en una página separada del inicio de sesión.
+
+HU-11
+Adquirir o solicitar una tarjeta
+
+Como cliente autenticado, quiero seleccionar una tarjeta y enviar una solicitud, para acceder a un producto bancario adecuado a mis necesidades.
+
+Criterios de aceptación
+- El cliente selecciona una tarjeta del catálogo.
+- El sistema permite elegir una modalidad de entrega disponible, como sucursal, domicilio o tarjeta digital.
+- Se confirma la solicitud y se genera un identificador.
+- El cliente puede consultar el estado de su solicitud.
+- Las solicitudes de tarjeta de crédito quedan sujetas a aprobación.
+
+HU-12
+Consultar tarjetas solicitadas
+
+Como cliente, quiero consultar las tarjetas que he solicitado y su estado, para conocer el progreso de cada solicitud.
+
+Criterios de aceptación
+- Se muestran únicamente las solicitudes asociadas al cliente.
+- Cada solicitud indica el producto, la fecha, el número de solicitud y su estado.
+- Se distinguen estados como pendiente, aprobada y rechazada.
+- El estado se actualiza cuando se procesa la solicitud.
+
+HU-13
+Realizar compras con tarjeta de crédito
+
+Como cliente con tarjeta de crédito, quiero registrar una compra y elegir el número de cuotas, para financiar el pago según mis posibilidades.
+
+Criterios de aceptación
+- Se ingresa el valor de la compra y el número de cuotas.
+- Se valida que el valor sea positivo y que exista cupo disponible.
+- Hasta 2 cuotas se aplica una tasa mensual del 0 %.
+- Entre 3 y 6 cuotas se aplica una tasa mensual del 1,9 %.
+- A partir de 7 cuotas se aplica una tasa mensual del 2,3 %.
+- Se muestra el valor estimado de la cuota mensual.
+- La compra y la deuda quedan registradas.
+
+Épica 4. Préstamos
+HU-14
+Simular un préstamo
+
+Como cliente autenticado, quiero calcular una cuota mensual estimada para un préstamo, para evaluar si puedo asumir el compromiso financiero.
+
+Criterios de aceptación
+- Se permite ingresar el monto solicitado.
+- Se puede elegir el plazo.
+- Se utiliza una tasa de interés para calcular la cuota.
+- Se muestra la cuota mensual estimada.
+- La simulación aclara que no constituye una aprobación de crédito.
+
+HU-15
+Solicitar un préstamo
+
+Como cliente autenticado, quiero enviar una solicitud de préstamo con el monto y plazo elegidos, para que mi solicitud pueda ser revisada.
+
+Criterios de aceptación
+- Se solicita el monto y el plazo.
+- Se muestra un resumen antes de confirmar.
+- El sistema genera un número de solicitud.
+- El cliente puede consultar el estado de la solicitud.
+- La solicitud no se considera aprobada automáticamente.
+
+Épica 5. Perfil y seguridad
+HU-16
+Editar perfil
+
+Como cliente, quiero modificar mis datos personales, para mantener mi información actualizada.
+
+Criterios de aceptación
+- Se pueden consultar los datos del perfil.
+- Se permite modificar los campos editables del registro.
+- Se validan los datos antes de guardar.
+- Los cambios se conservan y se muestra una confirmación.
+
+HU-17
+Cambiar contraseña
+
+Como cliente autenticado, quiero cambiar mi contraseña validando la actual y confirmando la nueva, para proteger el acceso a mi cuenta.
+
+Criterios de aceptación
+- Se solicita el usuario y la contraseña actual.
+- Se solicita la nueva contraseña y su confirmación.
+- La contraseña actual debe ser correcta.
+- La nueva contraseña y su confirmación deben coincidir.
+- El cambio se guarda y se informa el resultado.
+
+HU-18
+Cerrar sesión
+
+Como cliente autenticado, quiero cerrar mi sesión, para evitar que otras personas accedan a mis productos desde mi dispositivo.
+
+Criterios de aceptación
+- Existe una opción visible para cerrar sesión.
+- Al cerrar sesión, el usuario regresa a la página de acceso.
+- Las páginas privadas requieren autenticación.
+
+Épica 6. Estructura y programación del sistema
+HU-19
+Navegación organizada
+
+Como usuario, quiero que el sistema tenga páginas separadas para autenticación, productos, tarjetas, préstamos y transacciones, para encontrar fácilmente cada funcionalidad.
+
+Criterios de aceptación
+- La página inicial contiene únicamente acceso y registro.
+- Después de autenticarse, se puede acceder al panel y a las páginas privadas.
+- El menú permite navegar entre módulos.
+- La interfaz se adapta a computadores, tabletas y celulares.
+- Las operaciones muestran mensajes de éxito, error o advertencia.
+
+HU-20
+Modelar los productos con programación orientada a objetos
+
+Como desarrollador del sistema, quiero representar clientes, cuentas y tarjetas mediante clases, herencia y polimorfismo, para organizar el código y aplicar las reglas de negocio de cada producto.
+
+Criterios de aceptación
+- Se definen las clases Cliente, Cuenta, CuentaAhorros, CuentaCorriente y TarjetaCredito.
+- Se encapsulan los atributos internos.
+- Se reutiliza código mediante herencia.
+- Los métodos de las clases derivadas pueden comportarse de forma diferente mediante polimorfismo.
+- Las operaciones aplican las reglas específicas de cada tipo de cuenta.
+
+
+Resumen de historias de usuario
+Épica	Historias	Cantidad
+Registro y autenticación	HU-01 a HU-03	3
+Cuentas y transacciones	HU-04 a HU-09	6
+Tarjetas y compras	HU-10 a HU-13	4
+Préstamos	HU-14 a HU-15	2
+Perfil y seguridad	HU-16 a HU-18	3
+Arquitectura y navegación	HU-19 a HU-20	2
+Total	HU-01 a HU-20	20
